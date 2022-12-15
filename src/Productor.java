@@ -2,13 +2,13 @@ public class Productor extends Thread {
     private String name;
     private String verdura;
     private Tienda huerto;
-    private int verdurasProducidas;
-    private int numeroSemillas;
+    private int verdurasProducidas = 0;
+    private int totalVerduras;
 
-    public Productor (String name ,int numeroSemillas, Tienda huerto){
+    public Productor (String name ,int totalVerduras, Tienda tienda){
         this.name = name;
-        this.numeroSemillas = numeroSemillas;
-        this.huerto = huerto;
+        this.totalVerduras = totalVerduras;
+        this.huerto = tienda;
 
     }
 
@@ -23,9 +23,14 @@ public class Productor extends Thread {
 
         try{
 
-            Thread.sleep(tiempoCrecimiento());
-            this.huerto.vender(generarVerdura(), this.name);
-            verdurasProducidas++;
+            while (verdurasProducidas < totalVerduras ){
+
+                Thread.sleep(tiempoCrecimiento());
+                this.huerto.vender(generarVerdura(), this.name);
+                verdurasProducidas++;
+
+            }
+
 
         }catch (InterruptedException e){
             System.out.println("no produzco");

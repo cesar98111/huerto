@@ -3,9 +3,10 @@ public class Main {
 
         Tienda miHuerto = new Tienda();
 
-        Productor paco = new Productor("Paco",10,miHuerto);
-
+        Productor paco = new Productor("Paco",4,miHuerto);
+        Cliente pedro = new Cliente("Pedro",miHuerto);
         paco.start();
+        pedro.start();
 
 
     }

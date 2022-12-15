@@ -2,7 +2,9 @@ import java.util.ArrayList;
 
 public class Tienda {
     private final int MAXIMO_VERDURA = 10;
+    private final int POCICION = 1;
     private ArrayList<String> verduras = new ArrayList<>(MAXIMO_VERDURA);
+
 
     public Tienda(){
 
@@ -12,7 +14,8 @@ public class Tienda {
         System.out.println("una " + verdura+ "ha sido introducida por " + productorName);
     }
     synchronized public String recoger (String clienteName){
-       return verduras.remove(1);
+        if()
+            return verduras.remove(POCICION);
     }
 
 
