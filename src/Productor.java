@@ -13,7 +13,7 @@ public class Productor extends Thread {
     }
 
     public String generarVerdura(){
-         return Verduras.verduras[(int)(Math.random()*10+1)];
+         return Verduras.verduras[(int)(Math.random()*9+0)];
     }
     public int tiempoCrecimiento(){
         return (int)(Math.random()*20+1);
