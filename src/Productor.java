@@ -10,7 +10,6 @@ public class Productor extends Thread {
         this.numeroSemillas = numeroSemillas;
         this.huerto = huerto;
 
-
     }
 
     public String generarVerdura(){
