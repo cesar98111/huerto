@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cliente {
+public class Cliente extends Thread{
 
     private String nombre;
     private ArrayList<String> verdurasObtenidas;
@@ -10,6 +10,11 @@ public class Cliente {
         this.nombre = nombre;
         this.tienda = tienda;
 
+    }
+
+
+    public void run (){
+        this.tienda.recoger(this.nombre);
     }
 
 
