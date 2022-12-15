@@ -1,27 +1,31 @@
 public class Productor extends Thread {
     private String name;
     private String verdura;
-    private Huerto huerto;
+    private Tienda huerto;
     private int verdurasProducidas;
-    private int numeroSemilla;
+    private int numeroSemillas;
 
-    public Productor (String name ,int numeroSemilla, Huerto huerto){
+    public Productor (String name ,int numeroSemillas, Tienda huerto){
         this.name = name;
-        this.numeroSemilla = numeroSemilla;
+        this.numeroSemillas = numeroSemillas;
         this.huerto = huerto;
+
 
     }
 
-    public void generarSemilla(){
-        int numero = (int)(Math.random()*10+1);
+    public String generarVerdura(){
+         return Verduras.verduras[(int)(Math.random()*10+1)];
+    }
+    public int tiempoCrecimiento(){
+        return (int)(Math.random()*20+1);
     }
     @Override
     public void run (){
 
         try{
 
-            wait(5);
-            this.huerto.sembrar(this.verdura, this.name);
+            Thread.sleep(tiempoCrecimiento());
+            this.huerto.vender(generarVerdura(), this.name);
             verdurasProducidas++;
 
         }catch (InterruptedException e){
