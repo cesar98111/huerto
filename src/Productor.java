@@ -12,9 +12,7 @@ public class Productor extends Thread {
 
     }
 
-    public String generarVerdura(){
-         return Verduras.verduras[(int)(Math.random()*9+0)];
-    }
+
     public int tiempoCrecimiento(){
         return (int)(Math.random()*20+1);
     }
@@ -26,7 +24,8 @@ public class Productor extends Thread {
             while (verdurasProducidas < totalVerduras ){
 
                 Thread.sleep(tiempoCrecimiento());
-                this.huerto.vender(generarVerdura(), this.name);
+                this.huerto.vender(Verduras.generarVerdura(), this.name);
+                this.huerto.showStock();
                 verdurasProducidas++;
 
             }

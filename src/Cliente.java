@@ -12,6 +12,7 @@ public class Cliente extends Thread{
         this.nombre = nombre;
         this.tienda = tienda;
         this.maximoVerduras = maximoVerduras;
+        this.setPriority(10);
 
     }
 
@@ -22,9 +23,9 @@ public class Cliente extends Thread{
         int verdurasConsumidas = 0;
         while(this.maximoVerduras > verdurasConsumidas){
             try{
+
+                this.tienda.recoger(this.nombre);
                 sleep(tiempoConsumision());
-                String verduraObtenida = this.tienda.recoger(this.nombre);
-                System.out.println(this.nombre + "ha comprado " + verduraObtenida);
             }catch (InterruptedException e){
                 System.out.println(e);
             }
