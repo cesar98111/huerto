@@ -26,7 +26,7 @@ public class Tienda {
     synchronized  public void showStock (){
         String mensaje = "no hay verduras en el mercado";
         if(verduras.size() != 0){
-            mensaje ="en el mercadp hay: [";
+            mensaje ="en el mercado hay: [";
             Iterator stock = verduras.iterator();
 
             while(stock.hasNext()){

@@ -10,7 +10,7 @@ public class Main {
         Cliente jose = new Cliente("jose",CONSUMICION,miHuerto);
 
 
-        
+
         paco.start();
 
 
