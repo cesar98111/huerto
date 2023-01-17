@@ -14,7 +14,7 @@ public class Productor extends Thread {
 
 
     public int tiempoCrecimiento(){
-        return (int)(Math.random()*20+1);
+        return (int)(Math.random()*5+1);
     }
     @Override
     public void run (){

@@ -12,7 +12,7 @@ public class Cliente extends Thread{
         this.nombre = nombre;
         this.tienda = tienda;
         this.maximoVerduras = maximoVerduras;
-        this.setPriority(10);
+
 
     }
 
