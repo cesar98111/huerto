@@ -5,11 +5,13 @@ public class Productor extends Thread {
     private int verdurasProducidas = 0;
     private int totalVerduras;
 
+
+
     public Productor (String name ,int totalVerduras, Tienda tienda){
         this.name = name;
         this.totalVerduras = totalVerduras;
         this.huerto = tienda;
-
+        this.setPriority(MAX_PRIORITY);
     }
 
 
