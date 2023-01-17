@@ -17,7 +17,7 @@ public class Verduras{
             "green bean"};
 
     public static String generarVerdura(){
-        return verduras[(int)(Math.random()*9+0)];
+        return verduras[(int)(Math.random()*14+0)];
     }
 }
 
