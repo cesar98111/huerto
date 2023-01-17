@@ -9,7 +9,8 @@ public class Verduras{
             "asparagus",
             "radish",
             "brocoli",
-            "antichoke"};
+            "antichoke",
+    };
 
     public static String generarVerdura(){
         return verduras[(int)(Math.random()*9+0)];
